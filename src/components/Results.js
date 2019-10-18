@@ -13,7 +13,7 @@ class Results extends React.Component {
       return (
         <ul>
           {this.props.results.map((person, i) => {
-            return <li key={i}>{person.name}</li>
+            return <li key={i}>{person.name} {person.height} inches {person.mass} {person.hair_color} {person.skin_color}</li>
           })}
         </ul>
       )

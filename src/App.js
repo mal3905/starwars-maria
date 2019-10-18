@@ -34,12 +34,14 @@ export class App extends Component {
       }
       else {
         this.setState({ searchMade: true, results:resData.results.map(result => {
-          return {name: result.name}
+          return result; 
         })
       })}
       })
     .catch(err => this.setState({error: err.message}))
   }
+
+
 
   render() {
     return (

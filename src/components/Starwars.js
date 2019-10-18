@@ -30,8 +30,8 @@ export class Starwars extends Component {
         event.preventDefault();
 
         const {searchName} = this.state;
-        this.props.handleSubmit(searchName);
-        event.target.searchName.value= '';
+        this.props.handleSubmit(searchName.value);
+        event.target.value= '';
         this.setState({
             touched: false
         })
@@ -43,7 +43,7 @@ export class Starwars extends Component {
         const searchNameError = this.validateName();
 
         return (
-            <form onSubmit={e => this.handleSubmit(e)} style={{display: 'flex', flexDirection:'row'}}>
+            <form onSubmit={e => this.handleFormSubmit(e)} style={{display: 'flex', flexDirection:'row'}}>
                 <label htmlFor="name_search">Name Search</label>
                 <input
                 type="text"
